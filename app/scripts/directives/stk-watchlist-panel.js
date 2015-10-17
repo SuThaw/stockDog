@@ -8,7 +8,7 @@
  */
 angular.module('stockDogApp')
   //[1] Register Directive and inject dependencies
-  .directive('stkWatchlistPanel', function ($location,$modal,WatchlistSevice) {
+  .directive('stkWatchlistPanel', function ($location,$modal,WatchlistService) {
   	return {
   		templateUrl:'views/templates/watchlist-panel.html',
   		retrict:'E',
@@ -16,9 +16,9 @@ angular.module('stockDogApp')
   		link:function($scope){
   			//[2] Initialize variables
   			$scope.watchlist = {};
-  			var addListModal = $model({
+  			var addListModal = $modal({
   				scope:$scope,
-  				template:'views/template/addlist-modal.html',
+  				templateUrl:'views/templates/addlist-modal.html',
   				show:false
   			});
 
@@ -33,7 +33,8 @@ angular.module('stockDogApp')
 
   			//[5] Create a new list from fields in modal
   			$scope.createList = function(){
-  				Watchlistservice.save($scope.watchlist);
+  				WatchlistService.save($scope.watchlist);
+  				
   				addListModal.hide();
   				$scope.watchlist = {};
 

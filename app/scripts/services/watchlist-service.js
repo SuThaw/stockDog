@@ -14,7 +14,7 @@ angular.module('stockDogApp')
 
     var loadModel = function(){
     	var model = {
-    		watchlist: localStorage['StockDog.watchlists'] ? JSON.parse(localStroage['StockDog.watchlists']) : [],
+    		watchlists: localStorage['StockDog.watchlists'] ? JSON.parse(localStroage['StockDog.watchlists']) : [],
     		nextId : localStorage['StockDog.nextId'] ? JSON.parse(localStorage['StockDog.nextId']) : 0,
 
     	}
@@ -23,7 +23,7 @@ angular.module('stockDogApp')
 
     //[2] Helper: Save watchlist to localStorage
     var saveModel = function(){
-    	localStroage['StockDog.wathclists'] = JSON.stringify(Model.watchlists);
+    	localStorage['StockDog.wathclists'] = JSON.stringify(Model.watchlists);
     	localStorage['StockDog.nextId'] = Model.nextId; 
     };
 
