@@ -1,0 +1,27 @@
+<div class="panel panel-info">
+	<div class="panel-heading">
+		<span class="glyphicon glyphicon-eye-open"></span>
+		Watchlists
+		<!-- [1] Invoke showModal() handler on click -->
+		<button class="btn btn-success btn-xs pull-right" type="button" ng-click="showModal()">
+			<span class="glyphicon glyphicon-plus">
+				
+			</span>
+		</button>
+	</div>
+	<div class="panel-body">
+		<!-- [2] Show help Text if there no watchlist exists -->
+		<div class="text-center" ng-if="!watchlist.length">
+			Use <span class="glyphicon glyphicon-plus"></span> to create a list
+		</div>
+		<div class="list-group">
+			<!-- [3] Repeat over each list in watchlist and create link -->
+			<a href="" ng-repeat="list in watchlists track by $index" class="list-group-item">
+				{{list.name}}
+
+				<!-- [4] Delete this list by invoking deletelist() hanlder -->
+				<button class="close" type="button" ng-click="deleteList(list)">&times;</button>
+			</a>
+		</div>
+	</div>
+</div>
