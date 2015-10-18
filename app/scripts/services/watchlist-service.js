@@ -14,16 +14,16 @@ angular.module('stockDogApp')
 
     var loadModel = function(){
     	var model = {
-    		watchlists: localStorage['StockDog.watchlists'] ? JSON.parse(localStroage['StockDog.watchlists']) : [],
+    		watchlists: localStorage['StockDog.watchlists'] ? JSON.parse(localStorage['StockDog.watchlists']) : [],
     		nextId : localStorage['StockDog.nextId'] ? JSON.parse(localStorage['StockDog.nextId']) : 0,
 
-    	}
+    	};
     	return model;
     };
 
     //[2] Helper: Save watchlist to localStorage
     var saveModel = function(){
-    	localStorage['StockDog.wathclists'] = JSON.stringify(Model.watchlists);
+    	localStorage['StockDog.watchlists'] = JSON.stringify(Model.watchlists);
     	localStorage['StockDog.nextId'] = Model.nextId; 
     };
 
@@ -38,7 +38,7 @@ angular.module('stockDogApp')
     //[4] Return all watchlists or find by given ID
     this.query = function(listId){
     	if(listId){
-    		return findByid(listId);
+    		return findById(listId);
     	}else{
     		return Model.watchlists;
     	}

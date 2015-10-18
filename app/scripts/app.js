@@ -1,3 +1,4 @@
+
 'use strict';
 
 /**
@@ -19,11 +20,16 @@ angular
     'mgcrea.ngStrap'
   ])
   .config(function ($routeProvider) {
-    // $routeProvider
-    //   .when('/', {
-    //     templateUrl: 'views/main.html',
-    //     controller: 'MainCtrl',
-    //     controllerAs: 'main'
-    //   });
-      
+    $routeProvider
+      .when('/watchlist/:listId', {
+        templateUrl: 'views/watchlist.html',
+        Controller:'WatchlistCtrl'    
+      })
+      .when('/dashboard', {
+        templateUrl: 'views/dashboard.html',
+        controller: 'DashboardCtrl',
+    
+      });
+
+    $routeProvider.otherwise('/dashboard');
   });

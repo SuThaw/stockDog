@@ -12,5 +12,7 @@
   "unused": true,
   "globals": {
     "angular": false
-  }
+  },
+  "_" : false
+
 }
