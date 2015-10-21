@@ -23,11 +23,11 @@ angular
     $routeProvider
       .when('/watchlist/:listId', {
         templateUrl: 'views/watchlist.html',
-        Controller:'WatchlistCtrl'    
+        controller:'WatchlistCtrl'    
       })
       .when('/dashboard', {
         templateUrl: 'views/dashboard.html',
-        controller: 'DashboardCtrl',
+        controller: 'WatchlistCtrl',
     
       });
 
